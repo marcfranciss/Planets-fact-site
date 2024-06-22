@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
+
+
+// _colors
+// _colors__primary
+$default: hsl(0, 0%, 100%);
+$background: hsl(240, 67, 8);
+$gray: hsl(240, 17, 26);
+$gray-accent: hsl(240, 6, 54);
+
+
+$active: hsl(194, 48, 50);
+$hover: hsl(0, 0, 85);
+
+$planet-colors: (
+  Mercury: hsl(194, 48%, 50%),
+  Venus: hsl(33, 82%, 61%),
+  Earth: hsl(263, 66%, 51%),
+  Mars: hsl(10, 63%, 51%),
+  Jupiter: hsl(2, 68%, 53%),
+  Saturn: hsl(17, 73%, 46%),
+  Uranus: hsl(168, 73%, 44%),
+  Neptune: hsl(222, 87%, 56%)
+);
+@mixin planet-color-classes {
+  @each $planet, $color in $planet-colors {
+    .#{$planet} {
+      background-color: $color !important;
+    }
+  }
+}
+@mixin planet-color-classes-border($loc, $status) {
+    @each $planet, $color in $planet-colors {
+        @if $status == 'selected' {
+            .#{$planet}-border {
+            border-#{$loc}: $color solid 4px!important;
+            opacity: 100%;}
+        } @else {
+            .#{$planet}-border:hover {
+            border-#{$loc}: $color solid 4px!important;
+            opacity: 100%;
+        }}
+      }
+    }
+ 
+$tablet-break: 60rem;
+$mobile-break: 40rem;
+
+
+// _fonts
+// _fonts__family
+@mixin nav-logo {
+    font-family: "Antonio", sans-serif;
+    letter-spacing: -1.05px;
+    font-weight: 700;
+    font-size: 1.75rem; /* 28px*/
+    text-transform: capitalize;
+}
+
+@mixin header-h1 {
+    font-family: "Antonio", sans-serif;
+    font-weight: 700;
+    font-size: 5rem; /* 80px*/
+    // line-height: 103px;
+    text-transform: capitalize;
+
+    @media (max-width:$tablet-break) {
+        font-size: 3rem; /* 48px*/
+        // line-height: 62px;
+    }
+    @media (max-width:$mobile-break) {
+        font-size: 2.5rem; /* 40px*/
+        // line-height: 52px;
+    }
+}
+
+@mixin header-h2 {
+    font-family: "Antonio", sans-serif;
+    letter-spacing: -1.5px;
+    font-weight: 700;
+    font-size: 2.55rem; /* 40px*/
+    // line-height: 52px;
+    text-transform: capitalize;
+
+    @media (max-width:$tablet-break) {
+        letter-spacing: -0.9px;
+        font-size: 1.5rem; /* 24px*/
+        // line-height: 31px;
+    }
+    @media (max-width:$mobile-break) {
+        letter-spacing: -0.75px;
+        font-size: 1.25rem; /* 20px*/
+        // line-height: 26px;
+        }
+}
+
+@mixin header-h3 {
+    font-family: "Antonio", sans-serif;
+    letter-spacing: 2.57px;
+    font-weight: 700;
+    font-size: 1.333333333333333rem; /* 12px*/
+    // line-height: 25px;
+    text-transform: capitalize;
+
+    @media (max-width:$tablet-break) {
+        letter-spacing: -1.93px;
+        font-size: 0.5rem; /* 8px*/
+    }
+    @media (max-width:$mobile-break) {
+        // line-height: 10px;
+    }
+}
+
+@mixin spartan-para {
+    font-family: "League Spartan", sans-serif;
+    font-weight: 400;
+    font-size: 1.14rem; /* 14px*/
+    // line-height: 25px;
+
+    @media (max-width:$tablet-break) {
+        font-size: 0.75rem; /* 12px*/
+        line-height: 22px;
+    }
+    @media (max-width:$mobile-break) {
+        text-align: center;
+    }
+  }
+
+@mixin spartan-nav {
+    font-family: "League Spartan", sans-serif;
+    letter-spacing: 1px;
+    font-weight: 700;
+    font-size: 0.75rem; /* 11px*/
+    text-transform: uppercase;
+// no changes in tablet
+    @media (max-width:$mobile-break) {
+        letter-spacing: 1.36px;
+        font-size: 1.066666666666667rem; /* 15px*/
+    }
+  }
+
+@mixin spartan-nav-list-mobile {
+    font-family: "League Spartan", sans-serif;
+    letter-spacing: 1.36px;
+    font-weight: 700;
+    font-size: 0.75rem; /* 11px*/
+}
+@mixin spartan-card {
+    font-family: "League Spartan", sans-serif;
+    letter-spacing: 1px;
+    font-weight: 700;
+    font-size: 12px; /* 11px*/
+    // line-height: 25px;
+    @media (max-width:$tablet-break) {
+    letter-spacing: 0.75px;
+    font-weight: 700;
+    font-size: .5rem; /* 8px*/
+    // line-height: 16px;
+    // no changes in mobile
+    }
+  }
+
+  @mixin flex($direction, $align, $justify) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: $align;
+    justify-content: $justify;
+  }

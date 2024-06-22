@@ -1,0 +1,33 @@
+@use "./sass/abstracts/" as *;
+@use "./sass/components/" as *;
+
+#root {
+    width: 100%;
+    @include flex(column, center, null)
+}
+body {
+    background: url(assets/images/background-stars.svg) no-repeat;
+    background-color: $background;
+    
+    
+}
+.app-container {
+    width: 1440px;
+    max-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+}
+.planet-container {
+    display: flex;
+    flex-direction: row;
+    min-width: 800px;
+    height: 300px;
+    border: lime solid 1px;
+
+    img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+}

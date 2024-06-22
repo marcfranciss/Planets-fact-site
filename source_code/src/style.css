@@ -1,0 +1,820 @@
+@import url("https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap");
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+  cursor: default;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+html, body {
+  height: 100%;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+strong, b {
+  font-weight: bold;
+}
+
+/* Inherit fonts for inputs and buttons */
+/* input,
+button,
+textarea,
+select {
+  font: inherit;
+} */
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+.isHidden {
+  display: none !important;
+}
+
+#planets-header {
+  width: 100%;
+  max-width: 1440px;
+}
+
+.nav-container {
+  border-bottom: hsl(240, 17%, 26%) solid 1px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+  min-height: 85px;
+  padding-inline: 2rem;
+}
+@media (max-width: 60rem) {
+  .nav-container {
+    max-height: 160px;
+    grid-template-columns: auto;
+    grid-template-rows: repeat(2, 1fr);
+    padding: 2rem 3.25rem 1.75rem 3.25rem;
+  }
+}
+@media (max-width: 40rem) {
+  .nav-container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    padding: 1.5rem;
+  }
+}
+
+.nav-logo-container {
+  display: grid;
+  align-items: center;
+}
+@media (max-width: 60rem) {
+  .nav-logo-container {
+    padding-block-end: 1rem;
+    justify-content: center;
+  }
+}
+@media (max-width: 40rem) {
+  .nav-logo-container {
+    justify-content: start;
+    padding-block-end: 0;
+  }
+}
+
+.nav-logo {
+  font-family: "Antonio", sans-serif;
+  letter-spacing: -1.05px;
+  font-weight: 700;
+  font-size: 1.75rem; /* 28px*/
+  text-transform: capitalize;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: hsl(0, 0%, 100%);
+}
+
+.nav-ul-container {
+  display: grid;
+  align-items: center;
+}
+.nav-ul-container .Mercury-border:hover {
+  border-top: hsl(194, 48%, 50%) solid 4px !important;
+  opacity: 100%;
+}
+.nav-ul-container .Venus-border:hover {
+  border-top: hsl(33, 82%, 61%) solid 4px !important;
+  opacity: 100%;
+}
+.nav-ul-container .Earth-border:hover {
+  border-top: hsl(263, 66%, 51%) solid 4px !important;
+  opacity: 100%;
+}
+.nav-ul-container .Mars-border:hover {
+  border-top: hsl(10, 63%, 51%) solid 4px !important;
+  opacity: 100%;
+}
+.nav-ul-container .Jupiter-border:hover {
+  border-top: hsl(2, 68%, 53%) solid 4px !important;
+  opacity: 100%;
+}
+.nav-ul-container .Saturn-border:hover {
+  border-top: hsl(17, 73%, 46%) solid 4px !important;
+  opacity: 100%;
+}
+.nav-ul-container .Uranus-border:hover {
+  border-top: hsl(168, 73%, 44%) solid 4px !important;
+  opacity: 100%;
+}
+.nav-ul-container .Neptune-border:hover {
+  border-top: hsl(222, 87%, 56%) solid 4px !important;
+  opacity: 100%;
+}
+@media (max-width: 60rem) {
+  .nav-ul-container {
+    align-items: end;
+  }
+}
+@media (max-width: 40rem) {
+  .nav-ul-container {
+    justify-content: end;
+    align-items: center;
+  }
+}
+
+.nav-list {
+  padding-inline: 20px 40px;
+  height: 100%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-list li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  transition: all 0.4s ease-in-out;
+}
+.nav-list a {
+  font-family: "League Spartan", sans-serif;
+  letter-spacing: 1px;
+  font-weight: 700;
+  font-size: 0.75rem; /* 11px*/
+  text-transform: uppercase;
+  opacity: 75%;
+  color: hsl(0, 0%, 100%);
+  text-decoration: none;
+  transition: all 0.4s ease;
+}
+@media (max-width: 40rem) {
+  .nav-list a {
+    letter-spacing: 1.36px;
+    font-size: 1.0666666667rem; /* 15px*/
+  }
+}
+.nav-list a:hover {
+  opacity: 100%;
+}
+
+.btn-hamburger {
+  border: none;
+  outline: none;
+  width: 24px;
+  height: 24px;
+  background: url(/src/assets/icons/icon-hamburger.svg) center no-repeat;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+.btn-hamburger:focus, .btn-hamburger:active {
+  opacity: 25%;
+}
+
+.nav-list-mobile {
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  display: grid;
+  grid-auto-rows: auto;
+  background-color: hsl(240, 67%, 8%);
+  padding-block: 1.5rem;
+}
+.nav-list-mobile li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 1.5rem 2rem;
+  padding-block: 1.25rem;
+  border-bottom: #979797 solid 1px;
+  cursor: pointer;
+}
+.nav-list-mobile li:last-child {
+  border-bottom: none;
+}
+.nav-list-mobile li .mobile-list-container {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+.nav-list-mobile li .mobile-list-container .Mercury {
+  background-color: hsl(194, 48%, 50%) !important;
+}
+.nav-list-mobile li .mobile-list-container .Venus {
+  background-color: hsl(33, 82%, 61%) !important;
+}
+.nav-list-mobile li .mobile-list-container .Earth {
+  background-color: hsl(263, 66%, 51%) !important;
+}
+.nav-list-mobile li .mobile-list-container .Mars {
+  background-color: hsl(10, 63%, 51%) !important;
+}
+.nav-list-mobile li .mobile-list-container .Jupiter {
+  background-color: hsl(2, 68%, 53%) !important;
+}
+.nav-list-mobile li .mobile-list-container .Saturn {
+  background-color: hsl(17, 73%, 46%) !important;
+}
+.nav-list-mobile li .mobile-list-container .Uranus {
+  background-color: hsl(168, 73%, 44%) !important;
+}
+.nav-list-mobile li .mobile-list-container .Neptune {
+  background-color: hsl(222, 87%, 56%) !important;
+}
+.nav-list-mobile li .planet-color {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+}
+.nav-list-mobile li a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: hsl(0, 0%, 100%);
+  font-family: "League Spartan", sans-serif;
+  letter-spacing: 1.36px;
+  font-weight: 700;
+  font-size: 0.75rem; /* 11px*/
+}
+
+.main-container {
+  width: 100%;
+  max-width: 1440px;
+}
+.main-container section {
+  display: flex;
+  flex-direction: column;
+  padding-inline: 165px;
+  margin-block-end: 3.5rem;
+}
+@media (max-width: 60rem) {
+  .main-container section {
+    padding-inline: 2.5rem;
+    margin-block-end: 2.25rem;
+  }
+}
+@media (max-width: 40rem) {
+  .main-container section {
+    padding-inline: 1.5rem;
+    margin-block-end: 3rem;
+  }
+}
+
+.image-nav-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: auto;
+  height: 755px;
+  overflow: hidden;
+}
+@media (max-width: 60rem) {
+  .image-nav-container {
+    max-width: 665px;
+    grid-template-columns: auto;
+    grid-template-rows: repeat(2, 1fr);
+  }
+}
+@media (max-width: 40rem) {
+  .image-nav-container {
+    margin-top: 50px;
+    max-height: 600px;
+    grid-template-rows: auto;
+  }
+}
+
+.images-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 60rem) {
+  .images-container {
+    height: 460px;
+  }
+  .images-container img {
+    width: 40%;
+    aspect-ratio: 1;
+  }
+}
+@media (max-width: 40rem) {
+  .images-container {
+    height: 19rem;
+  }
+  .images-container img {
+    width: 50%;
+    aspect-ratio: 1;
+  }
+}
+
+.compund-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  aspect-ratio: 1;
+  position: relative;
+}
+@media (max-width: 60rem) {
+  .compund-image {
+    max-width: 80%;
+  }
+}
+@media (max-width: 40rem) {
+  .compund-image {
+    max-width: 100%;
+  }
+}
+
+.attached-image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+}
+@media (max-width: 60rem) {
+  .attached-image {
+    width: 65% !important;
+  }
+}
+
+.attached-image2 {
+  position: absolute;
+  width: 30%;
+  bottom: -55px !important;
+}
+@media (max-width: 60rem) {
+  .attached-image2 {
+    bottom: 100px !important;
+    width: 15% !important;
+    aspect-ratio: 0.9 !important;
+  }
+}
+@media (max-width: 40rem) {
+  .attached-image2 {
+    bottom: 65px !important;
+    width: 15% !important;
+    aspect-ratio: 0.9 !important;
+  }
+}
+
+.details-container {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 2.5fr 1fr;
+}
+.details-container .details-content {
+  align-content: center;
+}
+@media (max-width: 40rem) {
+  .details-container .details-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.details-container .details-nav {
+  font-family: "League Spartan", sans-serif;
+  letter-spacing: 1px;
+  font-weight: 700;
+  font-size: 0.75rem; /* 11px*/
+  text-transform: uppercase;
+  align-content: start;
+}
+@media (max-width: 40rem) {
+  .details-container .details-nav {
+    letter-spacing: 1.36px;
+    font-size: 1.0666666667rem; /* 15px*/
+  }
+}
+@media (max-width: 60rem) {
+  .details-container {
+    grid-template-rows: auto;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4.25rem;
+    max-width: 100%;
+  }
+  .details-container .details-nav {
+    align-content: center;
+  }
+}
+@media (max-width: 60rem) and (max-width: 40rem) {
+  .details-container {
+    grid-template-columns: auto;
+    gap: 0;
+  }
+}
+.details-container h2 {
+  font-family: "Antonio", sans-serif;
+  font-weight: 700;
+  font-size: 5rem; /* 80px*/
+  text-transform: capitalize;
+  text-transform: uppercase;
+  color: hsl(0, 0%, 100%);
+  margin-block-end: 1.5rem;
+}
+@media (max-width: 60rem) {
+  .details-container h2 {
+    font-size: 3rem; /* 48px*/
+  }
+}
+@media (max-width: 40rem) {
+  .details-container h2 {
+    font-size: 2.5rem; /* 40px*/
+  }
+}
+@media (max-width: 40rem) {
+  .details-container h2 {
+    margin-block-end: 1rem;
+  }
+}
+.details-container p {
+  font-family: "League Spartan", sans-serif;
+  font-weight: 400;
+  font-size: 1.14rem; /* 14px*/
+  color: hsl(0, 0%, 100%);
+  opacity: 75%;
+  margin-block-end: 1.5rem;
+}
+@media (max-width: 60rem) {
+  .details-container p {
+    font-size: 0.75rem; /* 12px*/
+    line-height: 22px;
+  }
+}
+@media (max-width: 40rem) {
+  .details-container p {
+    text-align: center;
+  }
+}
+@media (max-width: 60rem) {
+  .details-container p {
+    margin-block-end: 2rem;
+  }
+}
+
+.details-source {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "League Spartan", sans-serif;
+  font-weight: 400;
+  font-size: 1.14rem; /* 14px*/
+  opacity: 75%;
+  color: hsl(0, 0%, 100%);
+  font-size: 14px;
+  margin-block-end: 2.5rem;
+}
+@media (max-width: 60rem) {
+  .details-source {
+    font-size: 0.75rem; /* 12px*/
+    line-height: 22px;
+  }
+}
+@media (max-width: 40rem) {
+  .details-source {
+    text-align: center;
+  }
+}
+.details-source p {
+  margin-block-end: 0;
+  margin-inline-end: 1rem;
+  font-weight: 400;
+}
+.details-source a {
+  background: transparent;
+  font-weight: 700;
+  color: hsl(0, 0%, 100%);
+  display: inline-flex;
+  align-items: center;
+  width: 100%;
+  gap: 0.5rem;
+}
+@media (max-width: 60rem) {
+  .details-source {
+    margin-block-end: 1.75rem;
+  }
+}
+
+.details-nav .Mercury {
+  background-color: hsl(194, 48%, 50%) !important;
+}
+.details-nav .Venus {
+  background-color: hsl(33, 82%, 61%) !important;
+}
+.details-nav .Earth {
+  background-color: hsl(263, 66%, 51%) !important;
+}
+.details-nav .Mars {
+  background-color: hsl(10, 63%, 51%) !important;
+}
+.details-nav .Jupiter {
+  background-color: hsl(2, 68%, 53%) !important;
+}
+.details-nav .Saturn {
+  background-color: hsl(17, 73%, 46%) !important;
+}
+.details-nav .Uranus {
+  background-color: hsl(168, 73%, 44%) !important;
+}
+.details-nav .Neptune {
+  background-color: hsl(222, 87%, 56%) !important;
+}
+.details-nav li {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-inline-start: 1.75rem;
+  border: hsl(240, 17%, 26%) solid 1px;
+  margin-block-end: 1rem;
+  height: 3rem;
+  z-index: 1;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+.details-nav li:hover {
+  background-color: hsl(240, 17%, 26%);
+}
+.details-nav li span {
+  font-family: "League Spartan", sans-serif;
+  letter-spacing: 1px;
+  font-weight: 700;
+  font-size: 0.75rem; /* 11px*/
+  text-transform: uppercase;
+  color: hsl(0, 0%, 100%);
+  opacity: 75%;
+  text-transform: uppercase;
+  margin-inline-end: 1.75rem;
+  letter-spacing: 2.57px;
+}
+@media (max-width: 40rem) {
+  .details-nav li span {
+    letter-spacing: 1.36px;
+    font-size: 1.0666666667rem; /* 15px*/
+  }
+}
+@media (max-width: 60rem) {
+  .details-nav li span {
+    letter-spacing: 1.93px;
+    font-size: 0.5rem;
+  }
+}
+.details-nav li p {
+  margin: 0;
+  color: hsl(0, 0%, 100%);
+  opacity: 100%;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+@media (max-width: 60rem) {
+  .details-nav li p {
+    letter-spacing: 1.93px;
+    font-size: 0.5rem;
+  }
+}
+
+.added-details-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr));
+  grid-template-rows: auto;
+  gap: 1.875rem;
+}
+@media (max-width: 60rem) {
+  .added-details-container {
+    gap: 0.75rem;
+  }
+}
+@media (max-width: 40rem) {
+  .added-details-container {
+    gap: 0.5rem;
+  }
+}
+
+.added-details_card {
+  padding: 1.25rem 0 1.75rem 1.5rem;
+  border: hsl(240, 17%, 26%) solid 1px;
+}
+@media (max-width: 60rem) {
+  .added-details_card {
+    padding: 1rem;
+  }
+}
+.added-details_card h3 {
+  font-family: "League Spartan", sans-serif;
+  letter-spacing: 1px;
+  font-weight: 700;
+  font-size: 12px; /* 11px*/
+  text-transform: uppercase;
+  color: hsl(0, 0%, 100%);
+  opacity: 75%;
+}
+@media (max-width: 60rem) {
+  .added-details_card h3 {
+    letter-spacing: 0.75px;
+    font-weight: 700;
+    font-size: 0.5rem; /* 8px*/
+  }
+}
+.added-details_card h2 {
+  font-family: "Antonio", sans-serif;
+  letter-spacing: -1.5px;
+  font-weight: 700;
+  font-size: 2.55rem; /* 40px*/
+  text-transform: capitalize;
+  text-transform: uppercase;
+  color: hsl(0, 0%, 100%);
+}
+@media (max-width: 60rem) {
+  .added-details_card h2 {
+    letter-spacing: -0.9px;
+    font-size: 1.5rem; /* 24px*/
+  }
+}
+@media (max-width: 40rem) {
+  .added-details_card h2 {
+    letter-spacing: -0.75px;
+    font-size: 1.25rem; /* 20px*/
+  }
+}
+@media (max-width: 40rem) {
+  .added-details_card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.mobile-details-nav {
+  position: absolute;
+  left: 0;
+  right: 0;
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+  font-family: "League Spartan", sans-serif;
+  font-weight: 700;
+  font-size: 0.5rem;
+  color: hsl(0, 0%, 100%);
+  text-transform: uppercase;
+  letter-spacing: 1.93px;
+  place-items: center;
+  min-height: 50px;
+  padding-inline: 1.5rem;
+  cursor: pointer;
+  border-bottom: hsl(240, 17%, 26%) solid 1px;
+  opacity: 75%;
+}
+.mobile-details-nav .Mercury-border {
+  border-bottom: hsl(194, 48%, 50%) solid 4px !important;
+  opacity: 100%;
+}
+.mobile-details-nav .Venus-border {
+  border-bottom: hsl(33, 82%, 61%) solid 4px !important;
+  opacity: 100%;
+}
+.mobile-details-nav .Earth-border {
+  border-bottom: hsl(263, 66%, 51%) solid 4px !important;
+  opacity: 100%;
+}
+.mobile-details-nav .Mars-border {
+  border-bottom: hsl(10, 63%, 51%) solid 4px !important;
+  opacity: 100%;
+}
+.mobile-details-nav .Jupiter-border {
+  border-bottom: hsl(2, 68%, 53%) solid 4px !important;
+  opacity: 100%;
+}
+.mobile-details-nav .Saturn-border {
+  border-bottom: hsl(17, 73%, 46%) solid 4px !important;
+  opacity: 100%;
+}
+.mobile-details-nav .Uranus-border {
+  border-bottom: hsl(168, 73%, 44%) solid 4px !important;
+  opacity: 100%;
+}
+.mobile-details-nav .Neptune-border {
+  border-bottom: hsl(222, 87%, 56%) solid 4px !important;
+  opacity: 100%;
+}
+.mobile-details-nav li {
+  height: 100%;
+  text-align: center;
+  place-content: center;
+  transition: all 0.2s ease-in-out;
+}
+.mobile-details-nav li:hover {
+  border-bottom: hsl(240, 17%, 26%) solid 4px;
+}
+
+#root {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+body {
+  background: url(assets/images/background-stars.svg) no-repeat;
+  background-color: hsl(240, 67%, 8%);
+}
+
+.app-container {
+  width: 1440px;
+  max-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+}
+
+.planet-container {
+  display: flex;
+  flex-direction: row;
+  min-width: 800px;
+  height: 300px;
+  border: lime solid 1px;
+}
+.planet-container img {
+  width: 100%;
+  height: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
+}/*# sourceMappingURL=style.css.map */

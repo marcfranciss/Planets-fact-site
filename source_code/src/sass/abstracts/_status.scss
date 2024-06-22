@@ -1,0 +1,14 @@
+.isHidden {
+    display: none !important;
+}
+
+@mixin hover-text-100 {
+    &:hover {
+        opacity: 100%;
+    }
+}
+@mixin hover-text-75 {
+    &:hover {
+        opacity: 75%;
+    }
+}
